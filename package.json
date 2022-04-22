@@ -1,0 +1,27 @@
+{
+  "name": "aquila",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OR13/aquila.git"
+  },
+  "author": "Orie Steele",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/OR13/aquila/issues"
+  },
+  "homepage": "https://github.com/OR13/aquila#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "pdf2json": "^2.0.1",
+    "pdfreader": "^1.4.0"
+  }
+}
