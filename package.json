@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "shove": "npm run build; git add -A; git commit -m ':rocket:'; git push origin main",
+    "shove": "git add -A; git commit -m ':rocket:'; git push origin main",
     "secrets:rotate": "./scripts/rotate-secrets.sh .env"
   },
   "repository": {
