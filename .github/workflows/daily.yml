@@ -23,7 +23,7 @@ jobs:
         id: read_doc
         with:
           document_number: ${{ fromJson(steps.read_docs.outputs.json).results[0].document_number }}
-          # raw: true
+          raw: true
 
   analyze:
     needs:
