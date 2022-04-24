@@ -77,10 +77,11 @@ jobs:
 
             ${{ fromJSON(needs.read.outputs.json).abstract }}
 
-            - [source](${{ fromJSON(needs.read.outputs.json).html_url }})
-
             #### Summary
 
-            ```
-            ${{ needs.analyze.outputs.text }}
-            ```
+            ```${{ needs.analyze.outputs.text }}```
+
+            #### Links
+
+            - [HTML](${{ fromJSON(needs.read.outputs.json).html_url }})
+            - [PDF](${{ fromJSON(needs.read.outputs.json).pdf_url }})
