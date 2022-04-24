@@ -29,11 +29,29 @@ jobs:
     needs:
       - read
     runs-on: ubuntu-latest
+    outputs:
+      json: ${{ steps.completion.outputs.json }}
+      text: ${{ steps.completion.outputs.text }}
     steps:
       - name: Analyzing...
         run: |
           echo "Analyzing..."
-          echo "${{needs.read.outputs.text}}"
+      - name: Open AI Completion
+        uses: or13/open-ai@v0.0.3
+        id: completion
+        with:
+          api-key: ${{ secrets.OPENAI_API_KEY }}
+          engine: "text-davinci-002"
+          temperature: 0.5
+          max_tokens: 60
+          top_p: 1.0
+          frequency_penalty: 0.0
+          presence_penalty: 0.0
+          prompt: |-
+
+            ${{needs.read.outputs.text}}
+
+            \n\nTl;dr:
 
   share:
     needs:
@@ -43,3 +61,4 @@ jobs:
       - name: Sharing...
         run: |
           echo "Sharing..."
+          echo "${{needs.analyze.outputs.text}}"
