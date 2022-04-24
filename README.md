@@ -6,9 +6,9 @@ Aquila reads `federal register` and shares `gpt-3 content summaries` on `github 
 
 This proof of concept demonstrates a simple content generation workflow powered by:
 
-- open data
-- open ai
-- github
+- [open data](https://federalregister.gov)
+- [open ai](https://openai.com/)
+- [github workflows](https://docs.github.com/en/actions/using-workflows/about-workflows)
 
 This is a prototype for a "no code" bot framework powered by github actions.
 
