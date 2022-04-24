@@ -84,7 +84,9 @@ jobs:
 
             #### GPT-3 Summary
 
-            ```${{ needs.analyze.outputs.text }}```
+            ```
+            ${{ needs.analyze.outputs.text }}
+            ```
 
             #### Links
 
