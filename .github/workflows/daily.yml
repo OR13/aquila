@@ -6,7 +6,7 @@ jobs:
   read:
     runs-on: ubuntu-latest
     outputs:
-      json: ${{ steps.read_docs.outputs.json }}
+      json: ${{ steps.read_doc.outputs.json }}
       text: ${{ steps.read_doc.outputs.text }}
     steps:
       - name: Reading...
