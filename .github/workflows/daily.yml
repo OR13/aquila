@@ -50,7 +50,7 @@ jobs:
           presence_penalty: 0.0
           prompt: |-
 
-            ${{needs.read.outputs.text}}
+            ${{ needs.read.outputs.text }}
 
             \n\nTl;dr:
 
