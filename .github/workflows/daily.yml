@@ -5,10 +5,25 @@ on: [push]
 jobs:
   read:
     runs-on: ubuntu-latest
+    outputs:
+      json: ${{ steps.read_docs.outputs.json }}
+      text: ${{ steps.read_doc.outputs.text }}
     steps:
       - name: Reading...
         run: |
           echo "Reading..."
+      - name: Read Documents
+        uses: or13/federal-register@v0.0.2
+        id: read_docs
+        with:
+          agency: "commerce-department"
+
+      - name: Read a Document
+        uses: or13/federal-register@v0.0.2
+        id: read_doc
+        with:
+          document_number: ${{ fromJson(steps.read_docs.outputs.json).results[0].document_number }}
+          raw: true
 
   analyze:
     needs:
@@ -18,6 +33,7 @@ jobs:
       - name: Analyzing...
         run: |
           echo "Analyzing..."
+          echo "${{needs.read.outputs.text}}"
 
   share:
     needs:
