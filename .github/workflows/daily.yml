@@ -36,6 +36,7 @@ jobs:
       - name: Analyzing...
         run: |
           echo "Analyzing..."
+          echo '${{needs.read.outputs.json}}' | jq
       - name: Open AI Completion
         uses: or13/open-ai@v0.0.3
         id: completion
