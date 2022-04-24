@@ -33,3 +33,21 @@ So too are online communities, interested in maintaining privacy, politcal auton
 
 This project explores "cyber-environmentalism", the idea that digital environments need protection,
 and that community members can leverage some of the same tools being used to degrade digital experiences to protect them.
+
+### Unix Philosophy
+
+If you're not familar, see [wikipedia](https://en.wikipedia.org/wiki/Unix_philosophy).
+
+The idea is that in this system, github actions are the small modular components,
+and they are assembled into workflows that map to the authors intentions.
+
+For example, I may want to find interesting articles, summarize them and share those summaries with my friends.
+
+By replacing local scripts with hosted workflows, others are able to invent their own versions of this intention.
+
+Here are a few actions I created to explore these ideas:
+
+- [OR13/federal-register](https://github.com/OR13/federal-register)
+- [OR13/open-ai](https://github.com/OR13/open-ai)
+- [OR13/github-api-actions](https://github.com/OR13/github-api-actions)
+- [OR13/twitter-api-actions](https://github.com/OR13/twitter-api-actions)
