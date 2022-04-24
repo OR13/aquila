@@ -61,4 +61,4 @@ jobs:
       - name: Sharing...
         run: |
           echo "Sharing..."
-          echo "${{needs.analyze.outputs.json}}" | jq
+          echo '${{needs.analyze.outputs.json}}' | jq
