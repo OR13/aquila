@@ -57,6 +57,7 @@ jobs:
 
   share:
     needs:
+      - read
       - analyze
     runs-on: ubuntu-latest
     steps:
@@ -64,3 +65,20 @@ jobs:
         run: |
           echo "Sharing..."
           echo '${{needs.analyze.outputs.json}}' | jq
+      - name: Post Discussion
+        uses: or13/github-api-actions@v0.0.2
+        id: post
+        with:
+          access-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          owner: "OR13"
+          repo: "aquila"
+          category: "Announcements"
+          title: ${{ fromJSON(needs.read.outputs.json).action }}
+          body: |-
+            ### Abstract
+            ${{ fromJSON(needs.read.outputs.json).abstract }}
+
+            - [source](${{ fromJSON(needs.read.outputs.json).html_url }})
+
+            #### Summary:
+            ${{ needs.analyze.outputs.text }}
