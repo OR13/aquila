@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "shove": "npm run build; git add -A; git commit -m ':rocket:'; git push origin main"
   },
   "repository": {
     "type": "git",

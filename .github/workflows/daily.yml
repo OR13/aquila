@@ -1,0 +1,29 @@
+name: Daily
+
+on: [push]
+
+jobs:
+  read:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Reading...
+        run: |
+          echo "Reading..."
+
+  analyze:
+    needs:
+      - read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Analyzing...
+        run: |
+          echo "Analyzing..."
+
+  share:
+    needs:
+      - analyze
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sharing...
+        run: |
+          echo "Sharing..."
