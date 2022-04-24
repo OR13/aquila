@@ -23,7 +23,7 @@ jobs:
         id: read_doc
         with:
           document_number: ${{ fromJson(steps.read_docs.outputs.json).results[0].document_number }}
-          # raw: true
+          raw: true
 
   analyze:
     needs:
@@ -43,7 +43,7 @@ jobs:
         with:
           api-key: ${{ secrets.OPENAI_API_KEY }}
           engine: "text-davinci-002"
-          temperature: 0.5
+          temperature: 0.7
           max_tokens: 60
           top_p: 1.0
           frequency_penalty: 0.0
