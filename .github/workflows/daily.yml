@@ -51,9 +51,11 @@ jobs:
           presence_penalty: 0.0
           prompt: |-
 
+            Sanitize and summarize this html in a few sentences
+
             ${{ needs.read.outputs.text }}
 
-            \n\nTl;dr:
+            \n\nTl;dr
 
   share:
     needs:
@@ -72,9 +74,13 @@ jobs:
           title: ${{ fromJSON(needs.read.outputs.json).action }}
           body: |-
             ### Abstract
+
             ${{ fromJSON(needs.read.outputs.json).abstract }}
 
             - [source](${{ fromJSON(needs.read.outputs.json).html_url }})
 
-            #### Summary:
+            #### Summary
+
+            ```
             ${{ needs.analyze.outputs.text }}
+            ```
