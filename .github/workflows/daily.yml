@@ -24,7 +24,7 @@ jobs:
         with:
           document_number: ${{ fromJson(steps.read_docs.outputs.json).results[0].document_number }}
           raw: true
-          limit: 3000
+          limit: 1000
 
   analyze:
     needs:
